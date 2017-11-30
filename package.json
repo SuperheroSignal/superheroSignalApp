@@ -1,0 +1,31 @@
+{
+  "name": "supersignal",
+  "version": "1.0.0",
+  "description": "Need a hero? Send a signal!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SuperheroSignal/superheroSignalApp.git"
+  },
+  "keywords": [
+    "super",
+    "hero",
+    "signal",
+    "app"
+  ],
+  "author": "Leigh Kristine, Denny Wu, Ryan Feeney, Jimmy Cho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SuperheroSignal/superheroSignalApp/issues"
+  },
+  "homepage": "https://github.com/SuperheroSignal/superheroSignalApp#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mysql2": "^1.5.1",
+    "sequelize": "^4.23.2"
+  }
+}
