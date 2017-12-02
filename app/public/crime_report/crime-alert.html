@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Crime Report Form</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="ca-styles.css">
+  </head>
+  <body>
+
+  	<div class="container">
+	    <div class="panel panel-default">
+
+	    	<div class="panel-heading">
+	    		<h4 class="panel-title">Report a Crime or Dangerous Situation</h4>
+	    	</div>
+
+			<div class="panel-body">
+
+				<h4 id="crimeRadio">What is the nature of the situation?</h4>
+
+		    	<div class="form-check">
+				  <label class="form-check-label">
+				    <input class="form-check-input" type="radio" name="crimeType" id="type1" value="crime1">
+				    Crime in Progress
+				  </label>
+				</div>
+				<div class="form-check">
+				  <label class="form-check-label">
+				    <input class="form-check-input" type="radio" name="crimeType" id="type2" value="crime2">
+				    Developing Situation
+				  </label>
+				</div>
+				<div class="form-check">
+				  <label class="form-check-label">
+				    <input class="form-check-input" type="radio" name="crimeType" id="type3" value="crime3">
+				    Suspicious Activity
+				  </label>
+				</div>
+
+				<br>
+
+				<h4>Describe the situation.</h4>
+
+				<textarea placeholder="Write report here." class="form-control" rows="5" id="report"></textarea>
+				<button class="btn btn-default" id="add-report" type="submit">Submit</button>
+
+			</div>
+
+	    </div>
+	</div>
+
+  </body>
+</html>
