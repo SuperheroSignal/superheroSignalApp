@@ -1,3 +1,8 @@
 #add-user {
 	margin-top: 10px;
 }
+
+#needPermission {
+	position: relative;
+	bottom: 10px;
+}
