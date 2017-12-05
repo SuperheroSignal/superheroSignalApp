@@ -12,73 +12,62 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-  // GET route for getting all of the posts
-  app.get("/api/posts/", function(req, res) {
-    db.Post.findAll({})
-    .then(function(dbPost) {
-      res.json(dbPost);
+  // GET route for getting all of the reports
+  app.get("/api/reports/", function(req, res) {
+    // console.log('db: ',db)
+    db.Report.findAll({})
+    .then(function(dbReport) {
+      res.json(dbReport);
     });
   });
 
   // Get route for returning posts of a specific category
-  app.get("/api/posts/category/:category", function(req, res) {
-    db.Post.findAll({
+  app.get("/api/reports/category/:category", function(req, res) {
+    db.Reports.findAll({
       where: {
         category: req.params.category
       }
     })
-    .then(function(dbPost) {
-      res.json(dbPost);
+    .then(function(dbReport) {
+      res.json(dbReport);
     });
   });
 
   // Get rotue for retrieving a single post
-  app.get("/api/posts/:id", function(req, res) {
-    db.Post.findOne({
+  app.get("/api/reports/:id", function(req, res) {
+    db.Reports.findOne({
       where: {
         id: req.params.id
       }
     })
-    .then(function(dbPost) {
-      res.json(dbPost);
+    .then(function(dbReport) {
+      res.json(dbReport);
     });
   });
 
   // POST route for saving a new post
-  app.post("/api/posts", function(req, res) {
+  app.post("/api/reports", function(req, res) {
     console.log(req.body);
-    db.Post.create({
-      title: req.body.title,
-      body: req.body.body,
+    db.Reports.create({
+      situation: req.body.situation,
+      description: req.body.description,
       category: req.body.category
     })
-    .then(function(dbPost) {
-      res.json(dbPost);
-    });
-  });
-
-  // DELETE route for deleting posts
-  app.delete("/api/posts/:id", function(req, res) {
-    db.Post.destroy({
-      where: {
-        id: req.params.id
-      }
-    })
-    .then(function(dbPost) {
-      res.json(dbPost);
+    .then(function(dbReport) {
+      res.json(dbReport);
     });
   });
 
   // PUT route for updating posts
-  app.put("/api/posts", function(req, res) {
-    db.Post.update(req.body,
+  app.put("/api/reports", function(req, res) {
+    db.Report.update(req.body,
       {
         where: {
           id: req.body.id
         }
       })
-    .then(function(dbPost) {
-      res.json(dbPost);
+    .then(function(dbReport) {
+      res.json(dbReport);
     });
   });
 };
