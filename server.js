@@ -6,6 +6,7 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+var passport = require('passport');
 
 // Sets up the Express App
 // =============================================================
@@ -24,6 +25,9 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // Static directory
 app.use(express.static("public"));
 
+require("./config/passport")(passport)
+app.use(passport.initialize())
+app.use(passport.session())
 // Routes
 // =============================================================
 require("./routes/api-routes.js")(app);

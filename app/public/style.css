@@ -1,32 +1,10 @@
 .jumbotron {
-	background-image: url("images/header.jpeg");
-	background-repeat: no-repeat;
-	background-size: auto;
-	height: 200px;
-}
-.jumbotron .container {
-	position: relative;
+	font-family: 'Bangers', cursive;
+	text-align: center;
+	background-color: #C01111;
+	color: #fff;
 }
 
 body {
 	font-family: 'Catamaran', sans-serif;
-}
-
-.navbar {
-	background-color: #fff;
-	color: #000;
-}
-
-.navbar href {
-	background-color: #fff;
-	color: #C01111;
-}
-
-#add-user {
-	margin-top: 10px;
-}
-
-#needPermission {
-	position: relative;
-	bottom: 10px;
 }
