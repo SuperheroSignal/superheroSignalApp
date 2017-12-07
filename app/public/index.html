@@ -27,8 +27,9 @@
   <div class="container-fluid">
     <ul class="nav navbar-nav">
       <li class="active"><a href="#" class="homeButton">Home</a></li>
-      <li><a href="crime_report/crime-alert.html">Report a Crime</a></li>
-      <li><a href="#" class="regForm">Superheroes: Register an Account Here</a></li> <!-- crime_report/register-hero.html -->
+      <li><a href="#" class="logButton">Login</a></li>
+      <!-- <li><a href="crime_report/crime-alert.html">Report a Crime</a></li> -->
+      <li><a href="#" class="regButton">Superheroes: Register an Account Here</a></li> <!-- crime_report/register-hero.html -->
     </ul>
   </div>
 </nav>
@@ -40,6 +41,59 @@
 			<!-- updates here -->
 			<div class="dummyData">Dummy Data</div>
 			<div class="loginForm">Login Form</div>
+			<div class="regForm">
+				<div class="container">
+			    	<div class="panel panel-default">
+			    		<div class="panel-heading">
+				    		<h4 class="panel-title">Register a Superhero Signal Account!</h4>
+				    	</div>
+			    	</div>
+
+			      <div class="panel-body">
+			        
+			        <form>
+			          <div class="form-group">
+			            <label for="registerUser">User Name</label>
+			            <input type="text" class="form-control" id="registerUser" placeholder="Create a User Name">
+			          </div>
+
+			          <div class="form-group">
+			            <label for="alterEgo">Hero Name</label>
+			            <input type="text" class="form-control" id="alterEgo" placeholder="Hero Persona Name">
+			          </div>
+
+			          <div class="form-group">
+			            <label for="emailAd">Email</label>
+			            <input type="email" class="form-control" id="emailAd" placeholder="Email Address">
+			          </div>
+
+			          <div class="form-group">
+			            <label for="newPassword">Password</label>
+			            <input type="password" class="form-control" id="newPassword" placeholder="Enter a Password">
+			          </div>
+
+			          <div class="form-group">
+			            <label for="heroRank">Hero Rank</label>
+			            <div class="form-group">
+			              <select class="custom-select" id="heroRank" aria-describedby="needPermission">
+			                <option selected>Select a Hero Rank</option>
+			                <option value="rookie">Rookie</option>
+			                <option value="sidekick">Sidekick</option>
+			                <option value="hero">Hero</option>
+			                <option value="superhero">Superhero</option>
+			              </select>
+			            </div>
+			            <small id="needPermission" class="form-text text-muted">You must have the permission of an administrator or senior hero to choose a rank higher than "Rookie".</small>
+			          </div>
+
+			          <label for="profile">Briefly describe yourself, including any experience as a superhero.</label>
+			          <textarea placeholder="Write description here." class="form-control" rows="3" id="profile"></textarea>
+			          <button class="btn btn-default" id="add-user" type="submit">Submit</button>
+			        </form>
+
+			      </div>
+			    </div>
+			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="row">

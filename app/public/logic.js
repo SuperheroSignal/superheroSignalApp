@@ -1,20 +1,31 @@
 $(document).ready(function() {
 
 	$(".loginForm").hide();
+	$(".regForm").hide();
 	$(".dummyData").show();
 
 	$(".homeButton").on("click", goHome);
 
 	function goHome() {
 		$(".loginForm").hide();
+		$(".regForm").hide();
 		$(".dummyData").show();
 	}
 
-	$(".regForm").on("click", regNew);
+	$(".regButton").on("click", regNew);
 
 	function regNew() {
-		$(".loginForm").show();
+		$(".regForm").show();
 		$(".dummyData").hide();
+		$(".loginForm").hide();
+	}
+
+	$(".logButton").on("click", logNew);
+
+	function logNew() {
+		$(".regForm").hide();
+		$(".dummyData").hide();
+		$(".loginForm").show();
 	}
 
 });
