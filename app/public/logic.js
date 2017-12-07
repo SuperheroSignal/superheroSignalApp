@@ -36,10 +36,24 @@ $(document).ready(function() {
 		
 		event.preventDefault();
 
-		userName = $(".registerUser").val().trim();
-		heroName = $(".alterEgo").val().trim();
-		userRank = $(".heroRank").val().trim();
-		userProfile = $(".profile").val().trim();
+		var newHero = {
+			userName = $(".registerUser").val().trim(),
+
+			heroName = $(".alterEgo").val().trim(),
+
+			userRank = $(".heroRank").val().trim(),
+
+			userProfile = $(".profile").val().trim()
+		};
+
+		$.post("/api/new", newHero)
+
+	    .done(function(data) {
+
+	      console.log(data);
+	      alert("Adding new hero...");
+	      
+	    });
 
 		$(".registerUser").val("");
 		$(".alterEgo").val("");
