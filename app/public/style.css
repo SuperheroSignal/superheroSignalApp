@@ -30,3 +30,11 @@ body {
 	position: relative;
 	bottom: 10px;
 }
+
+#log-container {
+	text-align: center;
+}
+
+#user-log {
+	margin: auto;
+}
