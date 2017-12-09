@@ -27,8 +27,8 @@ module.exports = function(app) {
     res.render("../views/index", user);
   });
 
-  app.get("/crime-alert", function(req, res) {
-    res.sendFile(path.join(__dirname, "../app/public/crime-alert.html"));
+  app.get("/crimealert", function(req, res) {
+    res.sendFile(path.join(__dirname, "../app/public/crime_report/crime-alert.html"));
   });
 
   // blog route loads blog.html
@@ -36,10 +36,5 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../app/public/crime_report/register-hero.html"));
   });
 
-
-  //need a page created for members OR we need a login page created that would lead to the default index.html page
-  app.get('/members', isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname + '/../public/members.html'));
-  });
 
 };
