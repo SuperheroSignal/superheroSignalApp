@@ -29,7 +29,12 @@
       <li class="active"><a href="#">Home</a></li>
       <li><a href="crime_report/crime-alert.html">Report a Crime</a></li>
       <li><a href="/register">Superheroes: Report here</a></li>
-      <li><a href="/facebook">Login with Facebook</a></li>
+      {{#if user}}
+		<li><p>Hello {{{user.facebook_name}}}</p></li>
+	  {{else}}
+	  	<li><a href="/facebook">Login with Facebook</a></li>
+      {{/if}}
+      
     </ul>
   </div>
 </nav>
