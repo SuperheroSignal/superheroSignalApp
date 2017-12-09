@@ -1,5 +1,5 @@
 .jumbotron {
-	background-image: url("images/header.jpg");
+	background-image: url("../views/images/header.jpg");
 	background-repeat: no-repeat;
 	background-size: auto;
 	height: 300px;
