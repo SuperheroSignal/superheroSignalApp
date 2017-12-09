@@ -6,11 +6,35 @@
 // =============================================================
 
 // Requiring our Todo model
+var passport = require('passport');
 var db = require("../models");
+
+var isAuthenticated = require('../config/isAuthenticated');
 
 // Routes
 // =============================================================
 module.exports = function(app) {
+
+  //auth login
+  app.get('/login', function (req, res) {
+    res.send("logging in");
+  })
+
+  //auth logout
+  app.get('/logout', function(req, res) {
+    res.send("logging out");
+  })
+
+  //auth with facebook
+  app.get('/facebook', passport.authenticate('facebook', { scope: "email" }));
+
+  app.get('/facebook/auth/callback',
+    passport.authenticate('facebook', {
+      successRedirect : '/',
+      failureRedirect : '/'
+    })
+  );
+
 
   // GET route for getting all of the posts
   app.get("/api/posts/", function(req, res) {
