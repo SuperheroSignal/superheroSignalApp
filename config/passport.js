@@ -23,7 +23,6 @@ passport.use(
 			}
 		})
 		.then(function(user) {
-			// console.log(profile);
 			  var email = profile._json.email;
 	          var first_name = profile._json.first_name;
 	          var last_name = profile._json.last_name;
