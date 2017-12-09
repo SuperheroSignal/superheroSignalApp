@@ -9,6 +9,8 @@
 var passport = require('passport');
 var db = require("../models");
 
+var isAuthenticated = require('../config/isAuthenticated');
+
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -23,10 +25,10 @@ module.exports = function(app) {
     res.send("logging out");
   })
 
-  //auth with google
+  //auth with facebook
   app.get('/facebook', passport.authenticate('facebook'));
 
-  app.get('/auth/facebook/callback',
+  app.get('/facebook/auth/callback',
     passport.authenticate('facebook', {
       successRedirect : '/',
       failureRedirect : '/'

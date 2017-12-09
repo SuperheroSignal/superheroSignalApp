@@ -5,12 +5,15 @@ var db = require('../models/index');
 
 module.exports = function(passport) {
 
+
+
 passport.use(
 	new FacebookStrategy ({
 	//options for the FB strategy
 		clientID: keys.facebook.clientID,
 		clientSecret: keys.facebook.clientSecret,
-		callbackURL: '/facebook/auth/callback'
+		callbackURL: '/facebook/auth/callback',
+		profileFields   : ['id', 'name', 'email']
 	}, function(accessToken, refreshToken, profile, cb) {
 		//passport callback function
 
