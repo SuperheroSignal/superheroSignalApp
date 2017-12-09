@@ -1,5 +1,5 @@
 // logic for dynamically updating the live feed
-console.log("connected");
+
 //onclick event
 $("#add-report").on("click", function(postReport) {
 	event.preventDefault();

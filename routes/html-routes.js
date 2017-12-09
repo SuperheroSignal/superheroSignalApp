@@ -16,6 +16,19 @@ module.exports = function(app) {
 
   // index route loads view.html
   app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../app/public/crime_report/firstpage.html"));
+    // var user = {
+    //   user: req.user
+    // }
+    // // console.log(req.user);
+    // // res.sendFile(path.join(__dirname, "../app/public/index.html"));
+    // console.log("Loggin user")
+
+    // // console.log(user.id);
+    // res.render("../views/index", user);
+  });
+
+  app.get("/home", function(req, res) {
     var user = {
       user: req.user
     }
@@ -25,7 +38,7 @@ module.exports = function(app) {
 
     // console.log(user.id);
     res.render("../views/index", user);
-  });
+  })
 
   app.get("/crimealert", function(req, res) {
     res.sendFile(path.join(__dirname, "../app/public/crime_report/crime-alert.html"));

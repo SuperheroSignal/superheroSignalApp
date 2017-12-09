@@ -1,5 +1,5 @@
 .jumbotron {
-	background-image: url("./header.jpg");
+	background-image: url("images/header.jpg");
 	background-repeat: no-repeat;
 	background-size: auto;
 	height: 300px;
@@ -57,10 +57,6 @@ h4 {
 	margin: 0;
 }
 
-#fbname {
-	padding: 10px;
-}
-
 i {
 	color: #d3d3d3;
 }
@@ -77,5 +73,4 @@ i {
 	padding: 0;
 	margin: 0;
 }
-
 
