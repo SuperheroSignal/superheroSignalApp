@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Superhero Signal</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Bangers|Catamaran" rel="stylesheet">
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- JQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!--MomentJS-->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+</head>
+
+<body>
+<!--Jumbotron/Header Image-->
+<div class="jumbotron">
+  <div class="container-fluid">
+  	<!-- TO DO: fix header image -->
+  </div>
+</div>
+<!--Navbar-->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="crime_report/crime-alert.html">Report a Crime</a></li>
+      <li><a href="/register">Superheroes: Report here</a></li>
+      {{#if user}}
+		<li><p>Hello {{{user.facebook_name}}}</p></li>
+	  {{else}}
+	  	<li><a href="/facebook">Login with Facebook</a></li>
+      {{/if}}
+      
+    </ul>
+  </div>
+</nav>
+<!--Grid Setup-->
+<div class="container-fluid">
+	<div class="row-fluid">
+		<!-- div for main frame, will dynamically update using Javascript/JQuery -->
+		<div class="col-md-7" id="main-frame">
+				<h4>Live Feed</h4>
+			<div class="live-feed">
+				<!-- updates here -->
+			</div>
+		</div>
+		<div class="col-md-5" id="sidebar">
+			<div class="row-fluid">
+				<div class="col-md-5" id="sidebar-top">
+					<!-- form for reporting crimes -->
+					<div class="container" id="report-form">
+			    		<div class="panel panel-default">	
+			    			<div class="panel-heading">
+			    				<h4 class="panel-title">Report a Crime or Dangerous Situation</h4>
+			    			</div>
+							<div class="panel-body">
+								<h4 id="crimeRadio">What is the nature of the situation?</h4>
+				    				<div class="form-check">
+						 				<label class="form-check-label">
+						    			<input class="form-check-input" type="radio" name="crimeType" id="type1" value="Crime-in-Progress">
+						    			Crime in Progress
+						  				</label>
+									</div>
+									<div class="form-check">
+						  				<label class="form-check-label">
+						    			<input class="form-check-input" type="radio" name="crimeType" id="type2" value="Developing-Situation">
+						    			Developing Situation
+						  				</label>
+									</div>
+									<div class="form-check">
+						 				<label class="form-check-label">
+						    			<input class="form-check-input" type="radio" name="crimeType" id="type3" value="Suspicious-Activity">
+						    			Suspicious Activity
+						  				</label>
+									</div>
+									<br>
+									<h4>Describe the situation.</h4>
+								<textarea placeholder="Write report here." class="form-control" rows="5" id="report"></textarea>
+								<button class="btn btn-default" id="add-report" type="submit">Submit</button>
+
+							</div>
+
+		    			</div>
+					</div>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="col-md-5" id="sidebar-bottom">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- link Javascript logic -->
+<script src="logic.js"></script>
+</body>
+</html>
