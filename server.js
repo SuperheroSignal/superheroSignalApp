@@ -8,6 +8,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var session = require("express-session");
 var passport = require('passport');
+var path = require("path");
 
 // Sets up the Express App
 // =============================================================
@@ -17,6 +18,7 @@ var PORT = process.env.PORT || 3306;
 // Requiring our models for syncing
 var db = require("./models");
 
+app.use(express.static("app/public"));
 var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
@@ -29,7 +31,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Static directory
-app.use(express.static("public"));
+
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }))
 
 require("./config/passport")(passport)
