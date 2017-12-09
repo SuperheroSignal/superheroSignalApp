@@ -13,8 +13,8 @@ module.exports = {
       .then(() => {
         return queryInterface.addColumn('users', 'facebook_token', Sequelize.STRING)
       })
-
   },
+
 
   down: (queryInterface, Sequelize) => {
 
