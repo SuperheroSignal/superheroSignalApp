@@ -28,3 +28,20 @@ $("#add-report").on("click", function(postReport) {
 
 
 });
+
+$(".regForm").hide();
+$(".live-feed").show();
+
+$(".homeButton").on("click", goHome);
+
+function goHome() {
+	$(".regForm").hide();
+	$(".live-feed").show();
+}
+
+$(".regButton").on("click", regNew);
+
+function regNew() {
+	$(".regForm").show();
+	$(".live-feed").hide();
+}
